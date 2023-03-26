@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      KeyName: test-key
+      ImageId: ami-00c39f71452c08778
+      UserData: 
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          touch /var/tmp/abc.txt
+          echo "this is a test file" >> /var/tmp/abc.txt
+          yum install nginx -y
+          systemctl start nginx
