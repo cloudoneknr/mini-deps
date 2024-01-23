@@ -20,4 +20,6 @@ jobs:
           role-to-assume: arn:aws:iam::600605052115:role/GITHUB_ACTIONS_ROLE
           aws-region: us-east-1
       - name: test-cli
-        run: aws sts get-caller-identity
+        run: |
+            aws sts get-caller-identity
+            aws s3 ls
