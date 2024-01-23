@@ -1,5 +1,5 @@
 name: AWS CLI test
-on: push
+on: workflow_dispatch
 jobs:
   aws-cli-job:
     runs-on: ubuntu-latest
