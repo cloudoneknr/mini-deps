@@ -1,4 +1,4 @@
-name: build-docker-image
+name: build-image-add-tag
 on: workflow_dispatch
 jobs:
   build-docker-image:
