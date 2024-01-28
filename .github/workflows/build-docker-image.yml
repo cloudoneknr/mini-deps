@@ -20,9 +20,9 @@ jobs:
       - name: Build and Push
         uses: docker/build-push-action@v5
         with:
-         context: .
-         file: Dockerfile
-         push: true
-         tags: cloudoneknr/getting-started:latest
+          context: .
+          file: Dockerfile
+          push: true
+          tags: cloudoneknr/getting-started:latest
 
 
