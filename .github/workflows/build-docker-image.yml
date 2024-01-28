@@ -23,6 +23,6 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: cloudoneknr/getting-started:latest
+          tags: cloudoneknr/getting-started:v2.0
 
 
