@@ -18,12 +18,11 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build and Push
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v2
         with:
           context: .
           file: Dockerfile
-      - name: Push To Docker hub
-        run: |
-          docker push cloudoneknr/getting-started:latest
+          push: true
+          tags: cloudoneknr/getting-started:v1.0
 
 
