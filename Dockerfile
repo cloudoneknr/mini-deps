@@ -1,10 +1,8 @@
-FROM openjdk:8-jdk-alpine as build
-COPY . /usr/app
-WORKDIR /usr/app
-RUN chmod +x mvnw && ./mvnw clean package
+# syntax=docker/dockerfile:1
 
-FROM openjdk:8-jre-alpine
-COPY --from=build /usr/app/target/*.jar app.jar
-EXPOSE 8080
-
-ENTRYPOINT ["java","-jar","app.jar"]
+FROM node:18-alpine
+WORKDIR /app
+COPY . .
+RUN yarn install --production
+CMD ["node", "src/index.js"]
+EXPOSE 3000
