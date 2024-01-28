@@ -22,7 +22,8 @@ jobs:
         with:
           context: .
           file: Dockerfile
-          push: true
-          tags: cloudoneknr/getting-started:latest
+      - name: Push To Docker hub
+        run: |
+          docker push cloudoneknr/getting-started:latest
 
 
