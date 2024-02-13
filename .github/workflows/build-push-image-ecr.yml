@@ -1,0 +1,21 @@
+name: build-image-add-tag
+on: workflow_dispatch
+jobs:
+  build-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        name: check-out
+        uses: actions/checkout@v3
+
+      - 
+        run: docker build --tag my-image:v1 .
+
+      - 
+        name: Build and Push Docker image
+        uses: jwalton/gh-ecr-push@v1
+        with:
+          access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          region: us-east-1
+          image: my-image:v1
