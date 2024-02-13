@@ -1,4 +1,4 @@
-name: build-image-add-tag
+name: build-image-and-push-to-ecr
 on: workflow_dispatch
 jobs:
   build-docker-image:
