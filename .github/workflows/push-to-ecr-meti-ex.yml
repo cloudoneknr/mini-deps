@@ -3,13 +3,13 @@ on:
       branches: [master]
 
 env:
-GITHUB_SHA: ${{ github.sha }}
-GITHUB_REF: ${{ github.ref }}
-IMAGE: ember-annotation
-REGISTRY_HOSTNAME: 828265674650.dkr.ecr.us-east-1.amazonaws.com
+    GITHUB_SHA: ${{ github.sha }}
+    GITHUB_REF: ${{ github.ref }}
+    IMAGE: ember-annotation
+    REGISTRY_HOSTNAME: 828265674650.dkr.ecr.us-east-1.amazonaws.com
 
 jobs:
-build:
+  build:
     name: build and push
     runs-on: ubuntu-latest
     steps:
