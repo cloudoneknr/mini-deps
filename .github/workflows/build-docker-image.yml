@@ -25,5 +25,3 @@ jobs:
           file: Dockerfile
           push: true
           tags: cloudoneknr/getting-started:v1.0
-
-
