@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hello-mini-ingress
+  namespace: default
+spec:
+  rules:
+    - http:
+        paths:
+          - pathType: Prefix
+            path: /echo
+            backend:
+              service:
+                name: hello-mini
+                port:
+                  number: 8080

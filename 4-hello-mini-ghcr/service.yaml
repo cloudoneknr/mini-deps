@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: hello-mini
+  name: hello-mini
+  namespace: default
+spec:
+  ports:
+  - nodePort: 31293
+    port: 8080
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: hello-mini
+  sessionAffinity: None
+  type: LoadBalancer

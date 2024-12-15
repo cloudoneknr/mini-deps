@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: hello-mini
+  name: hello-mini
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-mini
+  template:
+    metadata:
+      labels:
+        app: hello-mini
+    spec:
+      containers:
+      - image: ghcr.io/cloudoneknr/hello-app:latest
+        imagePullPolicy: IfNotPresent
+        name: hello-server
+        ports:
+        - containerPort: 5000
+      restartPolicy: Always
+      imagePullSecrets:
+      - name: hello-mini
